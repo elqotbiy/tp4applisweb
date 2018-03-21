@@ -1,0 +1,14 @@
+Installation du corrigé :
+
+- installation des modules : 
+npm install
+
+- mise en place de la base de données. Par défaut, il faut créer une base postgresl en local dont le nom est surfaces. L'initialisation de la base est réalisé par :
+cat init.sql | psql surfaces
+
+- Configuration de la base pour le serveur : les paramètres sont dans config/settings.js
+
+- Lancement du serveur :
+node main.js (ou npm start)
+
+- Ouvrir un navigateur à l'adresse http://localhost:8080
