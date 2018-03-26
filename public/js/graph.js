@@ -25,6 +25,9 @@ $("document").ready(function () {
     }); 
     
     $("#action_add").click(function(){
+        $("form").submit(function(e){
+        $.post('/api/surfaces/',"", prefillForm, "html");
+    })
         $(".form-control").trigger("reset");
         $(".col-md-6.btn-default dropdown-toggle").empty();
         $("#submit_edit_panel").html("Ajouter");
@@ -39,7 +42,7 @@ $("document").ready(function () {
     // Les champs du formulaire peuvent être édités
    function enableEditForm()
     {
-        $("form#surface_descr > input)").each(function(){
+        $("form#surface_descr input").each(function(){
             $(this).prop("disabled", false);
         });
         $("#submit_edit_panel").prop("disabled", false);
@@ -49,7 +52,7 @@ $("document").ready(function () {
     // Les champs du formulaires ne peuvent plus être édités
     function disableEditForm()
     {
-        $("form#surface_descr > input").each(function(){
+        $("form#surface_descr input").each(function(){
             $(this).prop("disabled", true);
         });
         $("#submit_edit_panel").prop("disabled", true);
