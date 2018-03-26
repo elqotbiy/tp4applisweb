@@ -22,7 +22,7 @@ $("document").ready(function () {
         $.get('/api/surfaces/', "", setMenuEditPanel, "html");
         $("#submit_edit_panel").html("Mettre à jour");
         disableEditForm();
-    });
+    }); 
     
     $("#action_add").click(function(){
         $(".form-control").trigger("reset");
